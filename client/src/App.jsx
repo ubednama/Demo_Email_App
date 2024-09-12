@@ -22,7 +22,10 @@ export default function EmailComposer() {
     setSuccess("");
     const body = { email, subject, emailMessage };
     try {
-      const response = await axios.post("http://localhost:5001/send", body);
+      const response = await axios.post(
+        "https://emailsenderfullstack.netlify.app/send",
+        body
+      );
       console.log("Response from server:", response.data);
       setSuccess("Email sent successfully!");
       setEmail("");
