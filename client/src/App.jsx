@@ -23,7 +23,7 @@ export default function EmailComposer() {
     const body = { email, subject, emailMessage };
     try {
       const response = await axios.post(
-        "https://emailsenderfullstack.netlify.app/send",
+        "https://full-stack-email-app.onrender.com/send",
         body
       );
       console.log("Response from server:", response.data);
