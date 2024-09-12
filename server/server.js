@@ -6,6 +6,7 @@ const app = express();
 const port = process.env.PORT || 5000;
 
 const corsOption = {
+    origin: "*",
     origin: "https://full-stack-email-app.vercel.app",
     // origin: "http://localhost:5173",
 }
@@ -14,7 +15,7 @@ app.use(express.json());
 app.use(cors(corsOption));
 
 app.get("/", (req, res) => {
-    res.json({ message: "Hello World!"});
+    res.json({ message: "API is live"});
 });
 
 app.use(emailRoutes);
