@@ -89,7 +89,7 @@ export default function EmailComposer() {
                 />
                 <button
                   type="button"
-                  className="px-2 py-2 bg-gray-700 text-white rounded-md hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  className="h-10 w-11 flex items-center justify-center bg-gray-700 text-white rounded-md hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-500"
                   onClick={() => removeEmailField(index)}
                   aria-label="Remove email"
                   disabled={emails.length === 1}
@@ -99,7 +99,7 @@ export default function EmailComposer() {
                 {index === emails.length - 1 && (
                   <button
                     type="button"
-                    className="px-2 py-2 bg-gray-700 text-white rounded-md hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    className="h-10 w-11 flex items-center justify-center bg-gray-700 text-white rounded-md hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-500"
                     onClick={addEmailField}
                     aria-label="Add another email"
                   >
