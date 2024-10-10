@@ -5,16 +5,15 @@ This is a simple email sending application that allows users to send emails to m
 
 - Add multiple email addresses
 - Input subject and body for the email
-- Send emails to all specified recipients
-- Uses Nodemailer for email sending
+
+[Demo](https://full-stack-email-app.onrender.com/)
 
 ## Technologies Used
 
 - Node.js
 - Express.js (for server)
 - Nodemailer (for sending emails)
-- HTML/CSS (for frontend)
-- JavaScript (for client-side interactions)
+- React.js (for frontend)
 
 ## Getting Started
 
