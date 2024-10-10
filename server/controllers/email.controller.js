@@ -12,10 +12,9 @@ const transporter = nodemailer.createTransport({
 });
 
 const sendEmail = async (req, res) => {
-    console.log(req.body);
     const { emails, subject, emailMessage } = req.body;
 
-    if (!emails || !subject || !emailMessage) {
+    if (!emails || !emailMessage) {
         return res.status(400).json({ error: 'Missing required fields' });
     }
 
@@ -25,16 +24,15 @@ const sendEmail = async (req, res) => {
 
     const uniqueEmails = [...new Set(emails)];
 
-    // Add warning text and HTML links to the email message
     const warningMessage = `
-<br><br>
-<strong>Warning:</strong> This email was sent using a dummy project. Please do not take this email seriously.
-<br><br>
-<strong>Project Repository</strong><br>
-<a href="https://github.com/ubednama/Demo_Email_App">GitHub Repository</a>
-<br><br>
-<strong>Project Deployment</strong><br>
-<a href="https://full-stack-email-app.onrender.com/">Deployed Application</a>
+        <br><br>
+        <strong>Warning:</strong> This email was sent using a dummy project. Please do not take this email seriously.
+        <br><br>
+        <strong>Project Repository</strong><br>
+        <a href="https://github.com/ubednama/Demo_Email_App">GitHub Repository</a>
+        <br><br>
+        <strong>Project Deployment</strong><br>
+        <a href="https://full-stack-email-app.onrender.com/">Deployed Application</a>
     `;
     const fullEmailMessage = emailMessage + warningMessage;
 
@@ -49,11 +47,8 @@ const sendEmail = async (req, res) => {
             uniqueEmails.map(email => {
                 return new Promise((resolve, reject) => {
                     transporter.sendMail({ ...message, to: email }, (err, info) => {
-                        if (err) {
-                            reject(err);
-                        } else {
-                            resolve(info);
-                        }
+                        if (err) reject(err);
+                        else resolve(info);
                     });
                 });
             })
